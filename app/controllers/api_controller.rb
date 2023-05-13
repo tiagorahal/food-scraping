@@ -9,11 +9,11 @@ class ApiController < ActionController::API
   end
 
   def show_product
-    @product = Product.find_by(code: params[:code])
-    if @product
-      render json: @product, status: 200
+    @scraped_food = ScrapedFood.find_by(code: params[:code])
+    if @scraped_food.nil?
+      render json: { error: "ScrapedFood with code '#{params[:code]}' not found" }, status: :not_found
     else
-      render json: { error: "Product not found" }, status: 404
+      render json: @scraped_food
     end
   end
 end
