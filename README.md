@@ -1,5 +1,9 @@
 # Open Food Facts API
 
+
+This is a challenge by Coodesh
+
+
 This project implements a REST API that uses data from the Open Food Facts project, an open database with nutritional information for various food products. The goal of this project is to support the team of nutritionists at Fitness Foods LC to quickly compare the nutritional information of foods in the Open Food Facts database.
 
 ## Stack
