@@ -10,6 +10,8 @@ gem 'open-uri', '~> 0.3.0'
 
 gem 'nokogiri', '~> 1.14', '>= 1.14.4'
 
+gem 'clockwork', '~> 2.0'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
