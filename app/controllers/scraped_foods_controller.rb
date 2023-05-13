@@ -9,8 +9,8 @@ end
 
 class ScrapedFoodsController < ApplicationController
   def index
-    @scraped_foods = ScrapedFood.all
-    render :index
+    @scraped_foods = ScrapedFood.paginate(:page => params[:page])
+    render json: @scraped_foods
   end
 
   def scrape
