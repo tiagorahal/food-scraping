@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'products/:code' => 'api#show_product'
   get 'products' => 'api#list_products'
 
-  root 'scraped_foods#scrape'
+  get 'scraped_foods/scrape'
 
   resources :scraped_foods do
     member do

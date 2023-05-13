@@ -128,7 +128,7 @@ class ScrapedFoodsController < ApplicationController
         puts "image_url: #{image_url}"
       end
       
-      if count < 100
+      if count < 3
         # Create the ScrapedFood object
         @scraped_food = ScrapedFood.create(
           brand: brands,
