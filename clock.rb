@@ -12,4 +12,4 @@ handler do |job|
   system("cd /home/rahal/Documents/dev/jobs/food-scraping && bundle exec rails runner 'ScrapedFoodsController.new.scrape' -- --host=#{hostname}")
 end
 
-every(1.day, 'daily_scraper_job', at: '16:42')
+every(1.day, 'daily_scraper_job', at: '04:00')
