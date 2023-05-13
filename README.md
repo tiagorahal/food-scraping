@@ -6,6 +6,8 @@ This is a challenge by Coodesh
 
 This project implements a REST API that uses data from the Open Food Facts project, an open database with nutritional information for various food products. The goal of this project is to support the team of nutritionists at Fitness Foods LC to quickly compare the nutritional information of foods in the Open Food Facts database.
 
+This is the [Live video presentation](https://www.loom.com/embed/61b67a08aecf41ec9b8a55385ec5230b)
+
 ## Stack
 
 - Ruby 3.1.1
@@ -31,13 +33,19 @@ git clone https://github.com/tiagorahal/food-scraping.git
 bundle install
 ```
 
-3. Setup the database:
+3. Create the database:
 
 ```
-rails db:setup
+rails db:create
 ```
 
-4. Run the server:
+4. Run the migrations:
+
+```
+rails db:migrate
+```
+
+5. Run the server:
 
 ```
 rails server
@@ -110,7 +118,7 @@ curl -X GET http://localhost:3000/scraped_foods?page=2
 ]
 ```
 
-### GET /show_product?code=1234
+### GET /products/1234
 
 Returns the details of a product with the given code in JSON format.
 
@@ -123,18 +131,18 @@ Returns the details of a product with the given code in JSON format.
 **Example Request:**
 
 ```
-curl -X GET http://localhost:3000/show_product?code=1234
+curl http://localhost:3000/products/7622210449283
 ```
 
 **Example Response:**
 
 ```
 {
-  "code": 1234,
+  "code": 7622210449283,
   "barcode": "1234(EAN / EAN-13)",
   "status": "imported",
   "imported_t": "2021-05-13T00:00:00Z",
-  "url": "https://world.openfoodfacts.org/product/1234",
+  "url": "https://world.openfoodfacts.org/product/7622210449283",
   "product_name": "Sample Product",
   "quantity": "100 g",
   "categories": "Sample category",
