@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  root 'scraped_foods#index'
+  # Define the root URL to the 'scrape' action of 'scraped_foods'
+  root 'scraped_foods#scrape'
+  # Define a resource for 'scraped_foods'
+  resources :scraped_foods do
+    # Define a custom member route named 'scrape'
+    member do
+      get 'scrape'
+    end
+  end
 end
